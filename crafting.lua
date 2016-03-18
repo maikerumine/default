@@ -29,6 +29,13 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = 'default:aspen_wood 4',
+	recipe = {
+		{'default:aspen_tree'},
+	}
+})
+
+minetest.register_craft({
 	output = 'default:stick 4',
 	recipe = {
 		{'group:wood'},
@@ -36,15 +43,16 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:fence_wood 2',
+	output = 'default:sign_wall_steel 3',
 	recipe = {
-		{'group:stick', 'group:stick', 'group:stick'},
-		{'group:stick', 'group:stick', 'group:stick'},
+		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
+		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
+		{'', 'group:stick', ''},
 	}
 })
 
 minetest.register_craft({
-	output = 'default:sign_wall',
+	output = 'default:sign_wall_wood 3',
 	recipe = {
 		{'group:wood', 'group:wood', 'group:wood'},
 		{'group:wood', 'group:wood', 'group:wood'},
@@ -540,11 +548,20 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = 'default:ladder',
+	output = 'default:ladder_wood 3',
 	recipe = {
 		{'group:stick', '', 'group:stick'},
 		{'group:stick', 'group:stick', 'group:stick'},
 		{'group:stick', '', 'group:stick'},
+	}
+})
+
+minetest.register_craft({
+	output = 'default:ladder_steel 15',
+	recipe = {
+		{'default:steel_ingot', '', 'default:steel_ingot'},
+		{'default:steel_ingot', 'default:steel_ingot', 'default:steel_ingot'},
+		{'default:steel_ingot', '', 'default:steel_ingot'},
 	}
 })
 
@@ -570,17 +587,6 @@ minetest.register_craft({
 		{'default:mese_crystal'},
 	}
 })
-
-minetest.register_craft({
-	output = 'default:mese_crystal',
-	recipe = {
-		{'default:mese_crystal_fragment', 'default:mese_crystal_fragment', 'default:mese_crystal_fragment'},
-		{'default:mese_crystal_fragment', 'default:mese_crystal_fragment', 'default:mese_crystal_fragment'},
-		{'default:mese_crystal_fragment', 'default:mese_crystal_fragment', 'default:mese_crystal_fragment'},
-	}
-})
-
-
 
 minetest.register_craft({
 	output = 'default:meselamp 1',
@@ -645,18 +651,6 @@ minetest.register_craft({
 		{'default:snowblock'},
 	}
 })
-
-minetest.register_craft({
-	output = 'default:desert_cobble 3',
-	recipe = {
-	{'default:clay_brick',},
-    {'default:cobble', },
-    {'default:cobble', },
-}
-})
-
-
-
 
 --
 -- Crafting (tool repair)
@@ -772,7 +766,31 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:ladder",
+	recipe = "default:fence_acacia_wood",
+	burntime = 15,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "default:fence_junglewood",
+	burntime = 15,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "default:fence_pine_wood",
+	burntime = 15,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "default:fence_aspen_wood",
+	burntime = 15,
+})
+
+minetest.register_craft({
+	type = "fuel",
+	recipe = "default:ladder_wood",
 	burntime = 5,
 })
 
@@ -796,7 +814,7 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "fuel",
-	recipe = "default:sign_wall",
+	recipe = "default:sign_wall_wood",
 	burntime = 10,
 })
 
